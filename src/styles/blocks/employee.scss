@@ -1,0 +1,10 @@
+.employee{
+    padding: remy(15);
+    &__data{
+        padding-left: remy(15);
+        font-size: remy(18);
+    }
+    &__header{
+        font-size: remy(25);
+    }
+}

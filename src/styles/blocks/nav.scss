@@ -1,0 +1,17 @@
+.nav{
+    display: flex;
+    border-radius: 0;   
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    } 
+    &__container{
+        padding: remy(15);
+        overflow-y: scroll;
+        @media screen and (max-width: 500px) {
+            width: 100% !important;
+        } 
+    }
+    &__item{
+        margin-left: -1em;
+    }
+}
