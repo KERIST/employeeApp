@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js --p",
     "eslint": "eslint --ext .js,.jsx src --fix",
-    "dev": "webpack-dev-server --open --watch --hot --config webpack.dev.js"
+    "dev": "webpack-dev-server --open --watch --hot --config webpack.dev.js",
+    "test123": "webpack-dev-server --open --watch --hot --config webpack.test.js"
   },
   "author": "",
   "license": "ISC",

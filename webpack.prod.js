@@ -7,13 +7,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		bundle: path.resolve(__dirname, './src/script/index.ts'),
+		bundle: path.resolve(__dirname, './src/index.tsx'),
 		vendor: [
 			'react',
 			'react-dom',
 			'react-hot-loader',
 			'react-redux',
+			'react-router-dom',
+			'semantic-ui-css',
 			'react-router-redux',
+			'history',
+
 		],
 	},
 	output: {
@@ -43,6 +47,13 @@ module.exports = {
 					use: ['css-loader', 'sass-loader'],
 					publicPath: path.resolve(__dirname, './dist/style'),
 				}),
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg|ttf|woff|woff2|eot)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 25000,
+				},
 			},
 		],
 	},
