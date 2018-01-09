@@ -48,8 +48,6 @@ function getFiltredData(items: Array<Employee>, filter: string) {
             });
         });
 
-        console.log(keyArray);
-
         items.forEach((item: StoreItemsType) => {
 
             let depInArray: number = getDepartment(item.deptId);

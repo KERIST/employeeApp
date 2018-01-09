@@ -11,7 +11,6 @@ module.exports = {
 		vendor: [
 			'react',
 			'react-dom',
-			'react-hot-loader',
 			'react-redux',
 			'react-router-dom',
 			'react-router-redux',

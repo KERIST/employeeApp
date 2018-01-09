@@ -1,6 +1,4 @@
 .application {
-    display: flex;
-    height: 100vh;
     font-size: 18px;
     @media screen and (max-width: 500px) {
         flex-flow: column;

@@ -2,6 +2,7 @@ import filter from './filter';
 import items from './items';
 import isFetching from './isFetching';
 import error from './error';
+import sideMenu from './sideMenu';
 import { Reducer } from 'redux';
 import { ApplicationState } from 'src/store';
 import { combineReducers } from 'redux';
@@ -11,7 +12,8 @@ export const reducers = {
     items,
     filter,
     isFetching,
-    error
+    error,
+    sideMenu
 };
 
 export default reducers;

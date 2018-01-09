@@ -7,7 +7,22 @@
     "build": "webpack --config webpack.prod.js --p",
     "eslint": "eslint --ext .js,.jsx src --fix",
     "dev": "webpack-dev-server --open --watch --hot --config webpack.dev.js",
-    "test123": "webpack-dev-server --open --watch --hot --config webpack.test.js"
+    "test123": "webpack-dev-server --open --watch --hot --config webpack.test.js",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -35,6 +50,7 @@
     "awesome-typescript-loader": "^3.4.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
+    "babel-jest": "^22.0.4",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
@@ -53,8 +69,10 @@
     "file-loader": "^1.1.5",
     "flow-bin": "^0.59.0",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.0.4",
     "node-sass": "^4.7.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "react-test-renderer": "^16.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
