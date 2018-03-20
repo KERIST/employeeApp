@@ -7,11 +7,11 @@ import { compose } from 'redux';
 import EmployeeContainer from './EmployeeContainer';
 import { fetchData } from '../actions/actions';
 import { ApplicationState } from '../store/index';
-import NavContainer from './NavContainer';
+import SideMenuContainer from './SideMenuContainer';
 import Promo from '../components/promo';
 import Error404 from '../components/Error404';
 import PreloaderContaier from './PreloaderContaier';
-
+import HeaderContaier from './HeaderContainer';
 export interface PropsType {
     fetchData: () => void;
     state: ApplicationState;
@@ -29,14 +29,17 @@ class App extends React.Component<any, any> {
 
     public render() {
         return <div className="application">
-            <NavContainer />
-            <Switch>
-                <Route exact path='/' component={Promo} />
-                <Route exact path='/employee/' component={Promo} />
-                <Route path='/employee/:id' component={EmployeeContainer} />
-                <Route path='*' component={Error404} />
-            </Switch>
-            <PreloaderContaier />
+            <HeaderContaier />
+            <SideMenuContainer />            
+            <main className="content">
+                <Switch>
+                    <Route exact path='/' component={Promo} />
+                    <Route exact path='/employee/' component={Promo} />
+                    <Route path='/employee/:id' component={EmployeeContainer} />
+                    <Route path='*' component={Error404} />
+                </Switch>
+            </main>
+            <PreloaderContaier />            
         </div>;
     }
 }
@@ -47,7 +50,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     }
 });
 
-interface Props{
+interface Props {
     fetchData: () => void;
     match: any;
     location: any;

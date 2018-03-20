@@ -3,8 +3,10 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "blocks/react-app";
+@import "blocks/header";
+@import "blocks/content";
 @import "blocks/application";
-@import "blocks/nav";
+@import "blocks/side-menu";
 @import "blocks/nav-item";
 @import "blocks/link-list";
 @import "blocks/error";

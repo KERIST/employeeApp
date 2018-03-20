@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    padding: 16px;
+    background: #1b1c1d;
+    display: flex;
+    align-items: center;
+    &__menu-btn{
+        background: transparent;
+        color: #ffffff;
+        border: 0;
+        font-size: remy(24);
+        cursor: pointer;
+    }
+    &__title{
+        color: #ffffff;
+        font-size: remy(24);
+        padding-left: remy(40);
+    }
+}

@@ -1,0 +1,23 @@
+.side-menu{
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    border-radius: 0;    
+    left: -240px;
+    height: 100vh;
+    top: 0;
+    width: 100%;
+    transition: left 0.7s, visibility 0.7s;
+    &__container{
+        padding: remy(15);
+        overflow-y: scroll;
+    }
+    &__item{
+        margin-left: -1em;
+    }
+    &_visible{
+        left: 0;
+        width: 100%;
+        visibility: visible;
+    }
+}

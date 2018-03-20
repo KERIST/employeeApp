@@ -1,5 +1,16 @@
 {
     "presets": [
-        "es2015", "react", "flow"
-    ]
+        "es2015",
+        "react"
+    ],
+    "plugins": [
+        "react-hot-loader/babel"
+    ],
+    "jest": {
+        "globals": {
+            "ts-jest": {
+                "useBabelrc": true
+            }
+        }
+    }
 }

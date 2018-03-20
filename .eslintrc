@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "fbjs"
+    ],
+    "rules": {
+        "indent": 0,
+        "max-len": 0
+    }
+}

@@ -24,19 +24,24 @@ export interface Employee {
     createdOn: string
 }
 
+export interface SideMenuType{
+    visible: boolean;
+}
+
 export interface ApplicationState {
     items: Array<Employee>;
     filter: string;
     isFetching: boolean;
     error: boolean;
+    sideMenu: SideMenuType;
 }
 
 export const history = createHistory();
 
-const initalState: ApplicationState = { items: [], filter: '', isFetching: false, error: false };
+const initalState: ApplicationState = { items: [], filter: '', isFetching: false, error: false, sideMenu: {visible: false} };
 
 const middleware = [thunk, logger, routerMiddleware(history)];
-
+console.log(reducers);
 const store = createStore(
     combineReducers({
         ...reducers,

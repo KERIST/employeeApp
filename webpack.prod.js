@@ -7,13 +7,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		bundle: path.resolve(__dirname, './src/script/index.ts'),
+		bundle: path.resolve(__dirname, './src/index.tsx'),
 		vendor: [
 			'react',
 			'react-dom',
-			'react-hot-loader',
 			'react-redux',
+			'react-router-dom',
 			'react-router-redux',
+			'history',
 		],
 	},
 	output: {
@@ -44,6 +45,13 @@ module.exports = {
 					publicPath: path.resolve(__dirname, './dist/style'),
 				}),
 			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg|ttf|woff|woff2|eot)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 25000,
+				},
+			},
 		],
 	},
 	plugins: [
@@ -51,6 +59,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 			filename: 'index.html',
+			minify: {
+				collapseWhitespace: true,
+				collapseInlineTagWhitespace: true,
+				removeComments: true,
+				removeRedundantAttributes: true,
+			},
 		}),
 		new webpack.HashedModuleIdsPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
@@ -69,14 +83,22 @@ module.exports = {
 			cssProcessorOptions: { discardComments: { removeAll: true } },
 			canPrint: true,
 		}),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('production')
+		}),
 		new webpack.optimize.UglifyJsPlugin({
 			mangle: true,
 			compress: {
-				warnings: false, // Suppress uglification warnings
-				pure_getters: true,
-				unsafe: true,
-				unsafe_comps: true,
-				screw_ie8: true
+				warnings: false,
+				screw_ie8: true,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				if_return: true,
+				join_vars: true,
 			},
 			output: {
 				comments: false,
