@@ -1,3 +1,4 @@
+[Live demo](http://awario.tk)
 ## Setup
 ```
 npm i
